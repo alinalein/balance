@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Calories
+{% endblock %}
+
+{% block main %}
+    <h3 class="calories">Keep track of your calories</h3>
+    <a class="home" href="https://www.calories.info/">You can look up the calories here</a>
+    <pre><br></pre>
+    <form action="/calories " method="post">
+        <div class="mb-3" >
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="calories" placeholder="Calories" type="number">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="food" placeholder="Food" type="text">
+        </div>
+        <button type="submit" class="btn btn-outline-info">Add Food</button>
+    </form>
+    <pre> <br> </pre>
+    <form action="/calories" method="get">
+        <table  class="table table-bordered">
+            <thead class="home">
+                    <th>Calories</th>
+                    <th>Food</th>
+                    <th>Date</th>
+                    <th></th>
+            </thead>
+            <tbody class="home">
+                {%for calorie in calories%}
+                <tr>
+                    <td> {{ calorie.calories }} </td>
+                    <td> {{ calorie.food }} </td>
+                    <td> {{ calorie.date }} </td>
+                    <td>
+                        <form action="/delete" method="post">
+                            <input type="submit" value="Delete" class="btn btn-outline-info" />
+                            <input name="id" type="hidden" value="{{ calorie.id }}" />
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}

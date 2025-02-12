@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome to balance
+{% endblock %}
+
+{% block main %}
+<h3 class ="calories">✨Happy Body = Happy Mind✨</h3>
+<pre><br></pre>
+<pre><br></pre>
+<form class ="home">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Your BMR:</th>
+                <th>Amount calories recommended for you:</th>
+                <th>Amout calories consumed today:</th>
+                <th>Amout calories left for today :</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{ bmr }} </td>
+                <td> {{ total_cal }} </td>
+                <td> {{ cal }} </td>
+                <td> {{ allowed }} </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock %}
