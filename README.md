@@ -25,7 +25,8 @@ cd balance
 ### Install the dependencies 
 
 ```
-pip install -r requirements.txt
+.venv\Scripts\activate && pip install -r requirements.txt
+
 ```
 
 ### Run the application  
@@ -49,4 +50,8 @@ flask run
 - **Daily Update** : Resets calorie tracking at midnight to start a new day.  
 - **Calorie Lookup** : Provides an external link to check food calorie values.  
 - **Error Handling** : Displays error messages (with an angry cat image) for invalid inputs.  
-- **Responsive Design** : Light green UI for a calming experience, with soft buttons and typography.  
+- **Responsive Design** : Light green UI for a calming experience, with soft buttons and typography.
+
+## Preview
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/2e9f2ffc-857d-4104-94a5-afc8d47d5973" />
+
