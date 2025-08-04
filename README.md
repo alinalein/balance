@@ -22,11 +22,24 @@ git clone https://github.com/your-username/balance.git
 cd balance
 ```
 
-### Install the dependencies 
+### Install the dependencies for Windows
 
 ```
 .venv\Scripts\activate && pip install -r requirements.txt
 
+```
+### Install the dependencies for MAC
+#### Create virtual environment and activate it 
+
+```
+python3 -m venv .venv
+```
+```
+source .venv/bin/activate
+```
+#### Install the dependencies
+```
+pip install -r requirements.txt
 ```
 
 ### Run the application  

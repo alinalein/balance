@@ -61,12 +61,12 @@ def home():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    #Log user in"""
+    # Log user in
 
     # Forget any user_id
     session.clear()
 
-    # User reached route via POST (as by submitting a form via POST)
+    # User reached route via POST
     if request.method == "POST":
 
         # Ensure username was submitted
@@ -80,9 +80,9 @@ def login():
         # Query database for username
         rows = db.execute("SELECT * FROM user WHERE username = ?", request.form.get("username"))
 
-        # Ensure username exists and password is correct
+        # Check if username exists or password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("invalid username and/or password", 403)
+            return apology("invalid username or password", 403)
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -90,7 +90,7 @@ def login():
         # Redirect user to home page
         return redirect("/")
 
-    # User reached route via GET (as by clicking a link or via redirect)
+    # GET request
     else:
         return render_template("login.html")
 
